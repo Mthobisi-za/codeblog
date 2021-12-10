@@ -1,0 +1,19 @@
+<br> <br>
+<link rel="stylesheet" href="/css/blog.css">
+<div class="content">
+    {{#each data}}
+    <div class="table">
+        <div class="left">
+            <h1 class="title">{{this.title}}</h1>
+            <p>{{this.content}}</p>
+            <p>by {{this.publisher}}</p> <br>
+            <button class="btn bg-info"> <a class="nav-item nav-link" href="/post/{{this.id}}"> Read More</a>  </button>
+            <br> <br>
+        </div>
+        <div class="right"> <br>
+            <img src='{{this.link}}'>
+        </div>
+    </div>
+
+    {{/each}}
+</div>

@@ -1,0 +1,10 @@
+.text {
+    width: 90%;
+    text-align: center;
+    margin: auto;
+}
+
+.text .h1 {
+    color: #117ac9;
+    font-family: "Audiowide", sans-serif;
+}

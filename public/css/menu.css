@@ -1,0 +1,25 @@
+body {
+    color: #043959;
+}
+
+.menu {
+    display: flex;
+    color: #d1e4f0;
+}
+
+.logo {
+    width: 30%;
+}
+
+.logo img {
+    width: 30%;
+}
+
+.links {
+    display: flex;
+    min-width: 50%;
+}
+
+.navbar-nav a {
+    color: #043959;
+}
