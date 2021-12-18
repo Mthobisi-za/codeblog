@@ -40,7 +40,8 @@ app.get('/', useRoutes.basicHome);
 app.get('/upload', useRoutes.basicForm);
 app.get('/blog', useRoutes.basicBlog);
 app.get('/post/:ids', useRoutes.post);
-
+app.get('/newpost', useRoutes.newpost);
+app.post('/addpost', useRoutes.addpost);
 
 
 const PORT = process.env.PORT || 5000;

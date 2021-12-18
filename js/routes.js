@@ -28,10 +28,21 @@ module.exports = function factory(pool) {
         }
 
     }
+    async function newpost(req, res) {
+        res.render('newpost');
+    }
+    async function addpost(req, res) {
+        var data = req.body.data;
+        var obj = { data }
+        console.log(obj);
+        res.redirect('/newpost');
+    }
     return {
         basicHome,
         basicBlog,
         basicForm,
-        post
+        post,
+        newpost,
+        addpost
     }
 }

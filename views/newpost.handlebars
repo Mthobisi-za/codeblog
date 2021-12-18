@@ -1,0 +1,16 @@
+<br>
+<script src="/ckeditor/ckeditor.js"></script>
+<script src="/ckeditor/styles.js"></script>
+<link rel="stylesheet" href="/css/post.css">
+<form action="/addpost" method="post">
+<br> <h1>Make a new post</h1>
+<br>
+    <p>Post title</p>
+    <input type="text" name="title"> <br> <br> 
+    <p>Content</p>
+    <textarea name="data" id="editor" cols="30" rows="10"></textarea>
+    <br> <br><button type="submit">Submit</button>
+</form>
+<script>
+    CKEDITOR.replace( 'editor' );
+</script>
