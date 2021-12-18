@@ -1,6 +1,4 @@
 function makeEleme(title, content, author, id) {
-    var li = content.split('\\r\\n\\r\\n')
-    console.log(li)
     var fullString = `
             <h1 class="title">${title}</h1>
             <p>${content}</p>
