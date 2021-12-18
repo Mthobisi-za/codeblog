@@ -44,6 +44,12 @@ app.get('/newpost', useRoutes.newpost);
 app.post('/addpost', useRoutes.addpost);
 
 
+//api
+const apiFactory = require('./api/apifactory')
+const useApi = apiFactory(pool);
+
+app.get('/data', useApi.getAllPosts);
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log('Server started on ' + PORT);

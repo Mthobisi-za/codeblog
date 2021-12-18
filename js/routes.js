@@ -32,9 +32,11 @@ module.exports = function factory(pool) {
         res.render('newpost');
     }
     async function addpost(req, res) {
-        var data = req.body.data;
-        var obj = { data }
-        console.log(obj);
+        var title = req.body.title;
+        var data = JSON.stringify(req.body.data);
+        var author = req.body.author;
+        var tags = req.body.tags.split(' ');
+        await useFactory.makeNewPost(title, data, author, tags.toString());
         res.redirect('/newpost');
     }
     return {

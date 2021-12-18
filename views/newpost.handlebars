@@ -3,14 +3,25 @@
 <script src="/ckeditor/styles.js"></script>
 <link rel="stylesheet" href="/css/post.css">
 <form action="/addpost" method="post">
-<br> <h1>Make a new post</h1>
-<br>
+    <br>
+    <h1>Make a new post</h1>
+    <br>
     <p>Post title</p>
-    <input type="text" name="title"> <br> <br> 
+    <input type="text" name="title"> <br> <br>
     <p>Content</p>
     <textarea name="data" id="editor" cols="30" rows="10"></textarea>
-    <br> <br><button type="submit">Submit</button>
+    <br> <br>
+    <p>Author Name</p>
+    <input type="text" name="author" id="short"> <br> <br>
+    <p>Tags</p>
+    <div name="tags" id="changed"> <br>
+        <div class="text"></div> <br>
+    </div> <br> <br>
+    <textarea type="text" id="tags" oninput="checkTags()"></textarea> <br> <br>
+    <input type="hidden" class="inp" name="tags">
+    <button type="submit">Submit</button>
 </form>
 <script>
-    CKEDITOR.replace( 'editor' );
+    CKEDITOR.replace('editor');
 </script>
+<script src="/js/tags.js"></script>
