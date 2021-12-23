@@ -9,7 +9,7 @@ module.exports = function factory(pool) {
     async function basicBlog(req, res) {
         var data = await useFactory.getSnipArt();
         console.log(data);
-        res.render('blog', { data })
+        res.render('blog', { data });
     }
 
     function basicForm(req, res) {
@@ -26,7 +26,6 @@ module.exports = function factory(pool) {
         } else {
             res.render('post');
         }
-
     }
     async function newpost(req, res) {
         res.render('newpost');
