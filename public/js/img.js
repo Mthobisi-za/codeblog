@@ -30,10 +30,13 @@ urlinput.addEventListener('change', () => {
 });
 
 function clear() {
-    alert('hey');
     document.querySelector('.dynamicclass').src = '';
     document.querySelector('.hiddenimg').value = ' ';
-    document.querySelector('.dynamicclass').remove()
+    document.querySelector('.dynamicclass').remove();
+    //remove img
+    document.querySelector('.file').value = null;
+    document.querySelector('.url').value = ' '
+
 }
 
 var button = document.querySelector('.btnclear');
