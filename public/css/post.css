@@ -25,7 +25,7 @@ input {
     border-radius: 30px;
 }
 
-.text {
+.textt {
     width: 80%;
     margin: auto;
     display: flex;
@@ -65,7 +65,7 @@ input {
     text-align: center;
 }
 
-.rightbox {
+.boxedright {
     width: 50%;
     margin: auto;
     text-align: center;

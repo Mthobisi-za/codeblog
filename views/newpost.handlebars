@@ -27,7 +27,7 @@
             </div>
             <br> 
         </div>
-        <div class="rightbox">
+        <div class="boxedright">
             <input type="hidden" class="hiddenimg" name="image">
         </div>
     </div>
@@ -40,14 +40,14 @@
     <input type="text" name="author" id="short"> <br> <br>
     <p>Tags</p>
     <div name="tags" id="changed"> <br>
-        <div class="text"></div> <br>
+        <div class="textt"></div> <br>
     </div> <br> <br>
     <textarea type="text" id="tags" oninput="checkTags()"></textarea> <br> <br>
     <input type="hidden" class="inp" name="tags">
     <button type="submit">Submit</button>
 </form>
+
 <script>
     CKEDITOR.replace('editor');
 </script>
-<script src="/js/tags.js"></script>
 <script src="/js/img.js"></script>
