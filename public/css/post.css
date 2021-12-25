@@ -39,3 +39,37 @@ input {
     border-radius: 30px;
     text-align: center;
 }
+
+.description {
+    min-height: 200px;
+    min-width: 70%;
+}
+
+.box {
+    width: 80%;
+    max-height: 300px;
+    display: flex;
+}
+
+.leftbox {
+    width: 50%;
+    display: flex;
+    gap: 5%;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+}
+
+.dot1,
+.dot2 {
+    text-align: center;
+}
+
+.rightbox {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+
+/*-----none-----*/

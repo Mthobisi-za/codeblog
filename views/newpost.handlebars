@@ -8,6 +8,31 @@
     <br>
     <p>Post title</p>
     <input type="text" name="title"> <br> <br>
+    <br>
+    <p>Post Desciption</p>
+    <textarea name="description" class="description"></textarea> <br> <br>
+    <!--img--->
+    <div class="box">
+        <div class="leftbox">
+            <div class="dot1"> <br>
+               <p>Upload image</p> <br>
+            <input type="file"  class="file"> 
+            <br> <br>
+            </div>
+            <div class="dot2"> <br>
+                <p>Insert Url</p> <br>
+            <input type="text" class="url"> 
+            <br> <br>
+            <button type="button" class="btnclear">Clear</button>
+            </div>
+            <br> 
+        </div>
+        <div class="rightbox">
+            <input type="hidden" class="hiddenimg" name="image">
+        </div>
+    </div>
+    <!--img--->
+    <br> <br>
     <p>Content</p>
     <textarea name="data" id="editor" cols="30" rows="10"></textarea>
     <br> <br>
@@ -25,3 +50,4 @@
     CKEDITOR.replace('editor');
 </script>
 <script src="/js/tags.js"></script>
+<script src="/js/img.js"></script>
