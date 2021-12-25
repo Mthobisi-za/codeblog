@@ -8,10 +8,9 @@ function makeEleme(title, content, author, id) {
         }
     });
     var descript = content.split('<p></p>');
-    console.log(descript)
     descript.forEach(element => {
         if (element.includes('<p>')) {
-            console.log(element)
+
         }
     });
     //variables
@@ -43,6 +42,7 @@ async function start() {
     for (let i = 0; i < data.data.length; i++) {
         const ele = data.data[i];
         var content = JSON.parse(ele.content);
+        console.log(ele);
         var dataleft = makeEleme(ele.title, content, ele.author, ele.id).left;
         var dataright = makeEleme(ele.title, content, ele.author, ele.id).right;
         div.appendChild(dataleft);

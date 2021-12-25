@@ -39,7 +39,7 @@ const useRoutes = routes(pool);
 app.get('/', useRoutes.basicHome);
 app.get('/upload', useRoutes.basicForm);
 app.get('/blog', useRoutes.basicBlog);
-app.get('/post/:ids', useRoutes.post);
+app.get('/post/:title', useRoutes.post);
 app.get('/newpost', useRoutes.newpost);
 app.post('/addpost', useRoutes.addpost);
 
