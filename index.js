@@ -49,6 +49,8 @@ const apiFactory = require('./api/apifactory')
 const useApi = apiFactory(pool);
 
 app.get('/data', useApi.getAllPosts);
+app.get('/axios/post/:title', useApi.post);
+app.get('/axios/next/post/:title', useApi.getPosts)
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

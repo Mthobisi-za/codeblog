@@ -8,7 +8,6 @@ module.exports = function factory(pool) {
 
     async function basicBlog(req, res) {
         var data = await useFactory.getSnipArt();
-        console.log(data);
         res.render('blog', { data });
     }
 
@@ -17,16 +16,9 @@ module.exports = function factory(pool) {
     }
 
     async function post(req, res) {
-        var title = req.params;
-        var actualt;
-        for (const key in title) {
-            if (title[key] === 'script.js') {} else {
-                actualt = title[key];
-            }
-        }
-        if (actualt !== undefined) {
-            res.render('post');
-        }
+        var title = req.params.title;
+        var post = await useFactory.getPost(title);
+        res.render('post', { post });
     }
     async function newpost(req, res) {
         res.render('newpost');

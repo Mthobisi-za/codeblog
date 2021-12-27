@@ -1,0 +1,24 @@
+.post {
+    width: 100%;
+    background-color: rgb(228, 222, 222);
+    min-height: 500px;
+}
+
+.contents {
+    margin-top: 50px;
+    width: 90%;
+    margin: auto;
+    background: rgb(255, 255, 255);
+}
+
+.texts {
+    margin-top: 20px;
+    width: 90%;
+    margin: auto;
+    background: rgb(255, 255, 255);
+    min-height: 400px;
+}
+
+.imgg {
+    text-align: center;
+}
