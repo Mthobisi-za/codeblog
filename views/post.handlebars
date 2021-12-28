@@ -1,21 +1,25 @@
 <link rel="stylesheet" href="/css/nav.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
+    integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <div class="post"> <br> <br>
     <div class="contents"> <br> <br>
         <div class="texts">
-          <h2 style="text-align: center; text-transform: uppercase;" class="title">{{post.title}}</h2>  
+            <h2 style="text-align: center; text-transform: uppercase;" class="title">{{post.title}}</h2>
             <p style="text-align: right;">By {{post.author}} On {{post.p_date}}</p>
             <div class="imgg">
                 <img style="width: 30%; border-radius:10px;" src="{{post.image}}" alt="">
             </div> <br> <br>
             <div class="actualContent">
             </div>
+            <br> <br>
+            <nav class="nav">
+                <h4 class="h4nav">Back To Blog</h4>
+               <a class="a_next" href="/blog">Blog</a>
+            </nav>
+            <br> <br>
         </div>
     </div>
 </div>
 
-<nav class="nav">
-    <a href="a_previos"></a>
-   <a class="a_next"></a>
-</nav>
 <script src="/js/specificpost.js"></script>
