@@ -9,6 +9,14 @@ p_date text not null
 );
 
 
-create table stats(id serial primary key, 
-pageview int not null, data text not null, userid text not null
+create table stats(
+data text not null, 
+userid text primary key
 );
+
+create table dates(
+    user_id text, foreign key (user_id) references stats(userid),
+    actual_date text not null,
+    page_view int not null
+);
+

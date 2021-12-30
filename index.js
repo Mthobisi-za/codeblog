@@ -54,14 +54,15 @@ app.post('/update', useRoutes.update);
 //api
 const apiFactory = require('./api/apifactory')
 const useApi = apiFactory(pool, unique_id);
-
 app.get('/data', useApi.getAllPosts);
 app.get('/axios/post/:title', useApi.post);
 app.get('/axios/next/post/:title', useApi.getpost);
+//api dashboard
+app.get('/stats', useApi.stats);
+app.get('/stats/user', useApi.statsUser);
 
 //dashboard
 const useDashRoutes = require('./dashboardapi/routes')(pool, unique_id);
-
 app.get('/admin', useDashRoutes.home);
 
 

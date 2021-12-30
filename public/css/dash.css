@@ -33,3 +33,21 @@
 .contenttab {
     width: 75%;
 }
+
+.anav,
+.nava {
+    color: #007bff;
+}
+
+.anav .nava:hover {
+    text-decoration: underline;
+}
+
+.contentta {
+    width: 75%;
+}
+
+.gyn {
+    width: 90%;
+    margin: auto;
+}

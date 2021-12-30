@@ -1,16 +1,17 @@
-const factor = require('./factory')
+const factor = require('./factory');
+const userData = require('./userData')();
 module.exports = function factory(pool, unique_id) {
     const useFactory = factor(pool);
-
-    function basicHome(req, res) {
+    async function basicHome(req, res) {
+        var userInfo = await userData.getUserData();
+        var userDateInfo = await userData.getUserDate();
         if (req.session.unique_id) {
-            console.log(req.session.unique_id);
-            (async() => {
-                var data = await fetch
-            })
+            //already a user
+            await useFactory.setUserData(userInfo, unique_id, userDateInfo);
         } else {
+            //new user
             req.session.unique_id = unique_id;
-            console.log('no user id but i have just stored it now: ' + unique_id)
+            await useFactory.setUserData(userInfo, unique_id, userDateInfo);
         }
         res.render('index')
     }

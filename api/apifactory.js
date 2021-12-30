@@ -26,11 +26,21 @@ module.exports = function factory(pool) {
         var nexpost = (await pool.query('select title from articles where id= $1', [data[0].id - 1])).rows;
         res.json(nexpost[0].title);
     }
+    async function stats(req, res) {
+        var data = (await pool.query('select * from dates')).rows;
+        res.send(data);
+    }
+    async function statsUser(req, res) {
+        var data = (await pool.query('select * from stats')).rows;
+        res.send(data);
+    }
     return {
         getAllPosts,
         post,
         getPosts,
         getpost,
-        getprepost
+        getprepost,
+        stats,
+        statsUser
     }
 }
