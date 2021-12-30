@@ -20,10 +20,26 @@ module.exports = function makeChanges(pool) {
         var nextost = (await pool.query('select title from articles where id= $1', [data[0].id + 1])).rows;
         return data[0];
     }
+    async function updatePost(title, description, data, author, oldTitle) {
+        var date = new Date()
+        var dd = String(date.getDate()).padStart(2, '0');
+        var mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = date.getFullYear();
+        var fullDate = dd + '/' + mm + '/' + yyyy;
+        await pool.query(`
+        update articles set title = $1,
+        description = $2,
+        content = $3,
+        author = $4,
+        p_date = $5
+        where title = $6
+        `, [title, description, data, author, fullDate, oldTitle])
+    }
     return {
         getSnipArt,
         getPost,
         makeNewPost,
-        getId
+        getId,
+        updatePost
     }
 }

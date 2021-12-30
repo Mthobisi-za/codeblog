@@ -42,6 +42,10 @@ app.get('/blog', useRoutes.basicBlog);
 app.get('/post/:title', useRoutes.post);
 app.get('/newpost', useRoutes.newpost);
 app.post('/addpost', useRoutes.addpost);
+//edit post
+app.get('/edit', useRoutes.editPost);
+app.get('/edit/post/:title', useRoutes.changePost);
+app.post('/update', useRoutes.update);
 
 
 //api
@@ -51,8 +55,9 @@ const useApi = apiFactory(pool);
 app.get('/data', useApi.getAllPosts);
 app.get('/axios/post/:title', useApi.post);
 app.get('/axios/next/post/:title', useApi.getpost);
-//making previos post
-app.get('/axios/back/post/:title', useApi.getprepost);
+
+
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log('Server started on ' + PORT);

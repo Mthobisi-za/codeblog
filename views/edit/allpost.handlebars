@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="/css/edit.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<br> <br>
+<link rel="stylesheet" href="/css/blog.css">
+<div class="content">
+    <h1 style="text-align:center;">Edit content</h1> <br> <br>
+   {{#each data}}
+    <div class="table">
+        
+        <div class="left">
+            <h1 class="title">{{this.title}}</h1>
+            <p>{{this.description}}</p>
+            <p>by {{this.author}}</p> <br>
+            <button class="btn bg-info"> <a class="nav-item nav-link" href="/edit/post/{{this.title}}">Edit Post</a>  </button>
+            <br> <br>
+        </div>
+        <div class="right"> <br>
+            <img src='{{this.image}}'>
+        </div>
+       
+    </div> 
+ {{/each}}
+</div>

@@ -1,0 +1,60 @@
+<br>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
+    integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/ckeditor/ckeditor.js"></script>
+<script src="/ckeditor/styles.js"></script>
+<link rel="stylesheet" href="/css/post.css">
+<form action="/update" method="post">
+    <br>
+    <h1>Make a new post</h1>
+    <br>
+    <p>Post title</p>
+    <input type="text" class="titleinput" name="title" value="{{post.title}}"> <br> <br>
+    <input type="hidden" name="hiddenInput" value="{{post.title}}">
+    <br>
+    <p>Post Desciption</p>
+    <textarea name="description" name="description" class="description"></textarea> <br> <br>
+    <!--img--->
+    <div class="box">
+        <div class="leftbox">
+            <div class="dot1"> <br>
+               <p>Upload image</p> <br>
+            <input type="file"  class="file"> 
+            <br> <br>
+            </div>
+            <div class="dot2"> <br>
+                <p>Insert Url</p> <br>
+            <input type="text" class="url"> 
+            <br> <br>
+            <button type="button" class="btnclear">Clear</button>
+            </div>
+            <br> 
+        </div>
+        <div class="boxedright">
+            <input type="hidden" class="hiddenimg" name="image">
+        </div>
+    </div>
+    <!--img--->
+    <br> <br>
+    <p>Content</p>
+    <textarea name="data" id="editor" cols="30" rows="10"></textarea>
+    <br> <br>
+    <p>Author Name</p>
+    <input type="text" name="author" id="short" value="{{post.author}}"> <br> <br>
+    <p>Tags</p>
+    <div name="tags" id="changed"> <br>
+        <div class="textt"></div> <br>
+    </div> <br> <br>
+    <textarea type="text" id="tags" oninput="checkTags()"></textarea> <br> <br>
+    <input type="hidden" class="inp" name="tags">
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    CKEDITOR.replace('editor');
+</script>
+<script src="/js/img.js"></script>
+<script src="/js/tags.js"></script>
+<script src="/js/editjs.js"></script>
