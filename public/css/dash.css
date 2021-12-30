@@ -1,0 +1,35 @@
+.mother {
+    width: 100%;
+    margin: auto;
+}
+
+.h2title {
+    text-align: center;
+}
+
+.over {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    gap: 20px;
+}
+
+.menutab {
+    width: 20%;
+    background: #20202020;
+    border: 30px;
+}
+
+.h3tab {
+    text-align: center;
+}
+
+.navtab {
+    width: 90%;
+    margin: auto;
+    height: auto;
+}
+
+.contenttab {
+    width: 75%;
+}

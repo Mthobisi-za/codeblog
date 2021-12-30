@@ -1,8 +1,17 @@
 const factor = require('./factory')
-module.exports = function factory(pool) {
+module.exports = function factory(pool, unique_id) {
     const useFactory = factor(pool);
 
     function basicHome(req, res) {
+        if (req.session.unique_id) {
+            console.log(req.session.unique_id);
+            (async() => {
+                var data = await fetch
+            })
+        } else {
+            req.session.unique_id = unique_id;
+            console.log('no user id but i have just stored it now: ' + unique_id)
+        }
         res.render('index')
     }
 
@@ -43,7 +52,6 @@ module.exports = function factory(pool) {
         res.render('edit/postedit', { post });
     }
     async function update(req, res) {
-        console.log(req.body);
         var title = req.body.title;
         var description = req.body.description;
         var img = req.body.image;

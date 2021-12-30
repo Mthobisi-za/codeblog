@@ -3,6 +3,9 @@ const { engine } = require('express-handlebars');
 const body = require('body-parser');
 const session = require('express-session');
 const app = express();
+const USID = require("usid");
+const usid = new USID();
+const unique_id = usid.uuid();
 const { Pool } = require('pg');
 app.use(express.static('public'));
 app.use(body.urlencoded({ extended: false }));
@@ -34,7 +37,7 @@ if (connectionstr) {
     });
 }
 const routes = require('./js/routes')
-const useRoutes = routes(pool);
+const useRoutes = routes(pool, unique_id);
 
 app.get('/', useRoutes.basicHome);
 app.get('/upload', useRoutes.basicForm);
@@ -50,12 +53,16 @@ app.post('/update', useRoutes.update);
 
 //api
 const apiFactory = require('./api/apifactory')
-const useApi = apiFactory(pool);
+const useApi = apiFactory(pool, unique_id);
 
 app.get('/data', useApi.getAllPosts);
 app.get('/axios/post/:title', useApi.post);
 app.get('/axios/next/post/:title', useApi.getpost);
 
+//dashboard
+const useDashRoutes = require('./dashboardapi/routes')(pool, unique_id);
+
+app.get('/admin', useDashRoutes.home);
 
 
 const PORT = process.env.PORT || 5000;

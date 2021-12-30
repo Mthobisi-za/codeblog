@@ -9,3 +9,6 @@ p_date text not null
 );
 
 
+create table stats(id serial primary key, 
+pageview int not null, data text not null, userid text not null
+);
