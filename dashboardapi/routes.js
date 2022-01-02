@@ -16,15 +16,17 @@ module.exports = function routes(pool, id) {
     async function statistics(req, res) {
         var stats = await useFactory.stats();
         var statsuser = await useFactory.statsUser();
-        statsuser
-        res.render('dash/stats', { stats, user: statsuser });
+        var userName = req.session.userName;
+        res.render('dash/stats', { stats, user: statsuser, userName });
     }
     async function authFun(req, res) {
         var userName = req.body.username;
         var password = req.body.psw
         if (userName.toLowerCase() == 'mthobisi' && password.toLowerCase() == 'mthosasa3') {
+            req.session.userName = userName;
             res.redirect('/admin/' + userName.toLowerCase());
         } else if (userName.toLowerCase() == 'mthandeni' && password.toLowerCase() == 'mthosasa3') {
+            req.session.userName = userName;
             res.redirect('/admin/' + userName.toLowerCase());
         } else {
             res.redirect('/');
