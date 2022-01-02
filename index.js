@@ -19,11 +19,11 @@ app.use(
         saveUninitialized: true,
     })
 );
-var connectionstr = process.env.DATABASE_URL;
+var connectionString = process.env.DATABASE_URL;
 var pool;
-if (connectionstr) {
+if (connectionString) {
     pool = new Pool({
-        connectionString: connectionstr,
+        connectionString,
         ssl: { rejectUnauthorized: false },
     });
 } else {
