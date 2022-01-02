@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("YOUR_USER_ID");
+   })();
+</script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
@@ -31,7 +40,7 @@
 
 <!---subscribe form---->
 <div class="form-popup" id="myForm">
-  <form action="/subscribe" class="form-container">
+  <form action="/subscribe" class="form-container" method="post">
   <i class="fa fa-close"></i>
     <h1 style="text-align: center;">Subscribe</h1>
 
@@ -46,16 +55,48 @@
 </div>
 
 <script>
+    var local = localStorage.getItem('seen');
+    function check(){
+        if(local){
+            document.getElementById("myForm").style.display = "none"
+        }else{
+            localStorage.setItem('seen', true);
+            document.getElementById("myForm").style.display = "block"
+        }
+    }
+   
   document.getElementById("myForm").style.display = "none";
   var i = document.querySelector('.fa-close');
   i.addEventListener('click', ()=>{
       document.getElementById("myForm").style.display = "none"
   });
   setTimeout(()=>{
-       document.getElementById("myForm").style.display = "block";
-  }, 500);
+       check();
+  }, 5000);
 </script>
 <!---subscribe form---->
+<!---------auth--->
+<div class="auth">
+  <form action="/login" class="form-container" method="post">
+  <i class="fa fa-close auth_close"></i>
+    <h1 style="text-align: center;">LogIn Form</h1>
+
+    <label for="email"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>
+
+    <label for="psw"><b>Email</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit" class="btn">Login</button>
+  </form>
+</div>
+<script>
+     var i = document.querySelector('.auth_close');
+  i.addEventListener('click', ()=>{
+      document.querySelector('.auth').style.display = "none"
+  });
+</script>
+<!---------auth--->
     {{{body}}}
      <br> <br>
 <div class="footer"><br>
@@ -79,7 +120,7 @@
     <div class="navbar-nav">
                 <a class="nav-item nav-link" href="/contact">Contact us</a>
                 <a class="nav-item nav-link" href="/">Donate</a>
-                <a class="nav-item nav-link" href="/auth">Admin Panel</a>
+                <a class="nav-item nav-link auth_panel">Admin Panel</a>
             </div>
 </p>
     </div>
@@ -91,6 +132,13 @@
     <script src="script.js"></script>
    <link rel="stylesheet" href="/css/menu.css">
    <link rel="stylesheet" href="/css/popup.css">
+   <script>
+       var a_tag = document.querySelector('.auth_panel');
+       a_tag.addEventListener('click', ()=>{
+            document.querySelector('.auth').style.display = "block"
+       })
+   </script>
+   <script src="/js/email.js"></script>
 </body>
 
 </html>

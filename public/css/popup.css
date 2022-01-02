@@ -9,10 +9,20 @@
     z-index: 9;
 }
 
+.auth {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+}
+
 
 /* Add styles to the form container */
 
-.form-container {
+.form-container,
+.auth {
     max-width: 300px;
     padding: 10px;
     background-color: white;
@@ -22,7 +32,8 @@
 /* Full-width input fields */
 
 .form-container input[type=text],
-.form-container input[type=email] {
+.form-container input[type=email],
+.auth input[type=password] {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -34,7 +45,8 @@
 /* When the inputs get focus, do something */
 
 .form-container input[type=text]:focus,
-.form-container input[type=email]:focus {
+.form-container input[type=email]:focus,
+.auth input[type=password] {
     background-color: #ddd;
     outline: none;
 }
