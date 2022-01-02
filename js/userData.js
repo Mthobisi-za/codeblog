@@ -1,8 +1,13 @@
 const axios = require('axios');
 module.exports = function userData() {
     async function getUserData() {
-        var userData = await axios.get('http://ip-api.com/json');
-        return userData.data
+        try {
+            var userData = await axios.get('http://ip-api.com/json');
+            return userData.data
+        } catch (error) {
+            console.log(error);
+        }
+
     }
     async function getUserDate() {
         var date = new Date()

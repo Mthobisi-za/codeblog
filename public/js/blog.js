@@ -38,15 +38,20 @@ function makeEleme(title, content, author, id) {
 }
 var div = document.querySelector('.table');
 async function start() {
-    var data = await axios.get('/data');
-    for (let i = 0; i < data.data.length; i++) {
-        const ele = data.data[i];
-        var content = JSON.parse(ele.content);
-        console.log(ele);
-        var dataleft = makeEleme(ele.title, content, ele.author, ele.id).left;
-        var dataright = makeEleme(ele.title, content, ele.author, ele.id).right;
-        div.appendChild(dataleft);
-        div.appendChild(dataright);
+    try {
+        var data = await axios.get('/data');
+        for (let i = 0; i < data.data.length; i++) {
+            const ele = data.data[i];
+            var content = JSON.parse(ele.content);
+            console.log(ele);
+            var dataleft = makeEleme(ele.title, content, ele.author, ele.id).left;
+            var dataright = makeEleme(ele.title, content, ele.author, ele.id).right;
+            div.appendChild(dataleft);
+            div.appendChild(dataright);
+        }
+    } catch (error) {
+        console.log(error);
     }
+
 }
 start();

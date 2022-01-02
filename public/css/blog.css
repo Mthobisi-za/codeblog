@@ -1,4 +1,4 @@
-.table {
+.tables {
     display: flex;
     flex-wrap: wrap;
     width: 90%;
@@ -10,17 +10,17 @@
     background: rgb(243, 243, 243);
 }
 
-.left {
+.leftt {
     width: 40%;
     text-align: center;
 }
 
-.right {
+.rightt {
     width: 40%;
     text-align: center;
 }
 
-.right img {
+.rightt img {
     width: 50%;
 }
 

@@ -3,16 +3,16 @@
 <link rel="stylesheet" href="/css/blog.css">
 <div class="content">
    {{#each data}}
-    <div class="table">
+    <div class="tables">
         
-        <div class="left">
+        <div class="leftt">
             <h1 class="title">{{this.title}}</h1>
             <p>{{this.description}}</p>
             <p>by {{this.author}}</p> <br>
             <button class="btn bg-info"> <a class="nav-item nav-link" href="/post/{{this.title}}"> Read More</a>  </button>
             <br> <br>
         </div>
-        <div class="right"> <br>
+        <div class="rightt"> <br>
             <img src='{{this.image}}'>
         </div>
        

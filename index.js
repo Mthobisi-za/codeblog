@@ -64,6 +64,7 @@ app.get('/stats/user', useApi.statsUser);
 //dashboard
 const useDashRoutes = require('./dashboardapi/routes')(pool, unique_id);
 app.get('/admin', useDashRoutes.home);
+app.get('/statistics', useDashRoutes.statistics)
 
 
 const PORT = process.env.PORT || 5000;

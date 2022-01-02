@@ -23,3 +23,38 @@ body {
 .navbar-nav a {
     color: #043959;
 }
+
+
+/*-----footer-----*/
+
+.footer {
+    width: 100%;
+    background-color: rgb(27, 24, 24);
+    color: #043959;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.left,
+.center,
+.right {
+    width: 30%;
+    text-align: center;
+    color: white;
+    font-weight: 1px;
+}
+
+.right .navbar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.right .navbar-nav a {
+    color: #065e94;
+}
+
+.right .navbar-nav a:hover {
+    color: #065e94;
+    background-color: #05446b;
+}

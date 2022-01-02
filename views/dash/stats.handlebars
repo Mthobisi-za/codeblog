@@ -1,0 +1,72 @@
+<br> <br>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="/css/dash.css">
+<link rel="stylesheet" href="/css/dashstats.css">
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<div class="mother"> <br>
+    <h2 class="h2title">Admin Dashboard</h2> <br> <br>
+
+    <div class="over">
+        <div class="menutab">
+            <h3 class="h3tab">Menu</h3>
+            <a href="/admin">
+                <nav class="navtab">Overview</nav>
+            </a>
+            <a href="/statistics" class="anav">
+                <nav class="navtab">Statistics</nav>
+            </a>
+            <a href="/newpost">
+                <nav class="navtab">Add New Post</nav>
+            </a>
+            <a href="/edit">
+                <nav class="navtab">Edit Post</nav>
+            </a>
+        </div>
+        <div class="contenttab" id="init">
+            <div class="container" style="display: block;">
+                <div class="table">
+                    <div class="table-header" style="color: white;">
+                        <div class="header__item"><a id="name" class="filter__link" >User Id</a></div>
+                        <div class="header__item"><a id="wins" class="filter__link filter__link--number">Date</a></div>
+                        <div class="header__item"><a id="draws" class="filter__link filter__link--number">Page Views</a></div>
+                    </div>
+                    <div class="table-content">
+                        {{#each stats}}
+                        <div class="table-row">
+                            <div class="table-data">{{this.user_id}}</div>
+                            <div class="table-data">{{this.actual_date}}</div>
+                            <div class="table-data">{{this.page_view}}</div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contenttab" id="init">
+            <div class="container" style="display: block;">
+                <div class="table" style="display: block;">
+                    <div class="table-header" style="color: white;">
+                        <div class="header__item"><a id="name" class="filter__link" >User Id</a></div>
+                        <div class="header__item"><a id="wins" class="filter__link filter__link--number">country</a></div>
+                        <div class="header__item"><a id="draws" class="filter__link filter__link--number">Region Name</a></div>
+                    </div>
+                    <div class="table-content">
+                        {{#each user}}
+                        <div class="table-row">
+                            <div class="table-data">{{this.userid}}</div>
+                            <div class="table-data">{{this.country}}</div>
+                            <div class="table-data">{{this.regionName}}</div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <br> <br> <br>

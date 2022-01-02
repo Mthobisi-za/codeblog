@@ -2,11 +2,15 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/site.webmanifest">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Code Blog</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -25,15 +29,68 @@
         </div>
     </nav>
 
+<!---subscribe form---->
+<div class="form-popup" id="myForm">
+  <form action="/subscribe" class="form-container">
+  <i class="fa fa-close"></i>
+    <h1 style="text-align: center;">Subscribe</h1>
 
+    <label for="email"><b>Username</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
 
+    <label for="psw"><b>Email</b></label>
+    <input type="email" placeholder="Enter Email" name="psw" required>
+
+    <button type="submit" class="btn">Login</button>
+  </form>
+</div>
+
+<script>
+  document.getElementById("myForm").style.display = "none";
+  var i = document.querySelector('.fa-close');
+  i.addEventListener('click', ()=>{
+      document.getElementById("myForm").style.display = "none"
+  });
+  setTimeout(()=>{
+       document.getElementById("myForm").style.display = "block";
+  }, 500);
+</script>
+<!---subscribe form---->
     {{{body}}}
-
+     <br> <br>
+<div class="footer"><br>
+    <div class="left">
+        <p>Code blog</p>
+         <address>
+            <a>  Address: 
+             51 Sinthumule Street
+            zone 6 Meadowlands <br>
+            South Africa, Gauteng, Soweto
+             </a>
+        </address>
+    </div>
+    <div class="center">
+<p>About Us</p>
+<p>We are a small company founded in 2022, main focus is on  publishing new content</p>
+    </div>
+    <div class="right">
+<p>Useful Links</p>
+<p>
+    <div class="navbar-nav">
+                <a class="nav-item nav-link" href="/contact">Contact us</a>
+                <a class="nav-item nav-link" href="/">Donate</a>
+                <a class="nav-item nav-link" href="/auth">Admin Panel</a>
+            </div>
+</p>
+    </div>
+    
+</div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
    <link rel="stylesheet" href="/css/menu.css">
+   <link rel="stylesheet" href="/css/popup.css">
 </body>
 
 </html>

@@ -5,6 +5,6 @@ function makeElem(content) {
 (async() => {
     var title = document.querySelector('.title');
     var data = await axios.get('/axios/post/' + title.textContent);
-    var changed = JSON.parse(data.data.content)
+    var changed = JSON.parse(data.data.content);
     makeElem(changed);
 })();

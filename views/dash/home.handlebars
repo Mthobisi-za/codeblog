@@ -11,12 +11,12 @@
         <div class="menutab">
             <h3 class="h3tab">Menu</h3> 
             <a href=""> <nav class="navtab">Overview</nav></a>
-            <a class="anav"> <nav class="navtab nava" onclick="getEelem()">Statistics</nav></a>
-            <a href=""> <nav class="navtab">Add New Post</nav></a>
-            <a href=""> <nav class="navtab">Edit Post</nav></a>
+            <a href="/statistics" class="anav"> <nav class="navtab">Statistics</nav></a>
+            <a href="/newpost"> <nav class="navtab">Add New Post</nav></a>
+            <a href="/edit"> <nav class="navtab">Edit Post</nav></a>
         </div>
         <div style="display: flex; gap:20px;flex-wrap:wrap;" class="contenttab" id="init">
-            <div class="column" style="width: 50%;">
+            <div class="column" style="width: 90%;">
                  <h3 style="text-align: center;">Web Views Brief Stats</h3> <br>
                 <div>
                 <canvas id="myChart"></canvas>
@@ -30,31 +30,8 @@
                 </script>
             </div>
         </div>
-        <div style="display:none;" class="contentta" id="fullData">
-            <div class="column" style="width: 70%;">
-                 <h3 style="text-align: center;">Web Views Brief Stats</h3> <br>
-                <div class="gyn">
-                <canvas id="myChart"></canvas>
-                </div>
-            </div>
-            <div class="column"  style="width: 70%;">
-                <h3 style="text-align: center;">Geolocation</h3>
-                <div id="map" class="gyn"></div>
-                <script>
-                   
-                </script>
-            </div>
-        </div>
     </div>
 </div> <br> <br> <br>
  <script src="/js/userapi.js"></script>
  <script src="/js/map.js"></script>
  
- <script>
-   function getEelem(event){
-     var tag =document.querySelector('#init');
-     tag.style.display = 'none';
-     var tag2 =document.querySelector('#fullData');
-     tag.style.display = 'block';
-   }
- </script>
