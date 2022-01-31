@@ -13,11 +13,13 @@
     "dependencies": {
         "axios": "^0.24.0",
         "body-parser": "^1.19.0",
+        "convertapi": "^1.11.1",
         "dotenv": "^10.0.0",
         "express": "^4.17.1",
         "express-handlebars": "^6.0.2",
         "express-session": "^1.17.2",
         "node-fetch": "^3.1.0",
+        "pdfreader": "^1.2.14",
         "pg": "^8.7.1",
         "usid": "^1.0.21"
     }

@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config();
 const { engine } = require('express-handlebars');
 const body = require('body-parser');
 const session = require('express-session');
@@ -35,8 +36,8 @@ if (connectionString) {
         database: 'users',
         ssl: false,
     });
-}
-const routes = require('./js/routes')
+};
+const routes = require('./js/routes');
 const useRoutes = routes(pool, unique_id);
 
 app.get('/', useRoutes.basicHome);
@@ -49,6 +50,7 @@ app.post('/addpost', useRoutes.addpost);
 app.get('/edit', useRoutes.editPost);
 app.get('/edit/post/:title', useRoutes.changePost);
 app.post('/update', useRoutes.update);
+app.post('/search', useRoutes.search);
 
 
 //api

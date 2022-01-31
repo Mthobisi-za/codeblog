@@ -1,21 +1,53 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
+    integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <br> <br>
 <link rel="stylesheet" href="/css/blog.css">
+<div class="linkss"> <br>
+    <h3 style="text-align: center;">Choose your preferences</h3> <br>
+    <div class="bottom">
+        <form action="search" method="post">
+            <label for="grade">Select Grade: </label>
+            <select name="grade" id="grade">
+                {{#each grade}}
+                <option class="plo">{{this.grade_name}}</option>
+                {{/each}}
+            </select>
+            <label for="subject">Select Subject: </label>
+            <select name="subject" id="subject">
+                {{#each subject}}
+                <option class="plo">{{this.category_name}}</option>
+                {{/each}}
+            </select>
+            <button type="submit">Search</button>
+            <a href="/blog"><button type="button">Show all</button></a>
+        </form>
+<br> <br> <span class="err" style="color: red;">{{err}}</span> <br>
+<span class="tip" style="color: orange;">{{tip}}</span>
+
+    </div>
+    <br> <br>
+
+</div>
 <div class="content">
-   {{#each data}}
+    {{#each data}}
     <div class="tables">
-        
+
         <div class="leftt">
             <h1 class="title">{{this.title}}</h1>
             <p>{{this.description}}</p>
-            <p>by {{this.author}}</p> <br>
-            <button class="btn bg-info"> <a class="nav-item nav-link" href="/post/{{this.title}}"> Read More</a>  </button>
+            <p>Subject: {{this.category_name}}</p>
+            <p>Grade: {{this.grade_name}}</p>
+            <p>Published by: {{this.author}}</p> <br>
+            <button class="btn bg-info"> <a class="nav-item nav-link" href="/post/{{this.title}}"> Read More</a>
+            </button>
             <br> <br>
         </div>
         <div class="rightt"> <br>
             <img src='{{this.image}}'>
         </div>
-       
-    </div> 
- {{/each}}
+
+    </div>
+    {{/each}}
 </div>
+<script src="/js/blogaxios.js"></script>

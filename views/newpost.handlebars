@@ -36,6 +36,20 @@
     <p>Content</p>
     <textarea name="data" id="editor" cols="30" rows="10"></textarea>
     <br> <br>
+    <label for="grade">Choose Grade</label>
+    <select name="grade" id="grade">
+        {{#each grade}}
+            <option value="{{this.id}}">{{this.grade_name}}</option>
+        {{/each}}
+    </select>
+    <br>
+    <label for="subject">Choose subject</label>
+    <select name="subject" id="subject">
+        {{#each subject}}
+        <option value="{{this.id}}">{{this.category_name}}</option>
+        {{/each}}
+    </select>
+    <br> <br>
     <p>Author Name</p>
     <input type="text" name="author" id="short"> <br> <br>
     <p>Tags</p>

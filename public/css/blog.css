@@ -27,3 +27,18 @@
 a {
     color: black;
 }
+
+.linkss {
+    width: 50%;
+    display: block;
+    margin: auto;
+    background: rgb(228, 228, 228);
+}
+
+.bottom {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: auto;
+}
